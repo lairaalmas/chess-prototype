@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -10,176 +10,27 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>
-    <title>Xadrez</title>
+    <title>Chess</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/phaser@3.15.1/dist/phaser-arcade-physics.min.js"></script>
 
     <style>
-        td,
-        th {
-            height: 50px;
-            width: 50px;
+        q {
+            font-style: italic;
         }
     </style>
 </head>
 
 <body>
-    <div class="container">
+    <h1 class="text-center">Chess</h1>
 
-        <h1 class=" text-center mb-5">Xadrez</h1>
+    <p class="text-center"><q>Because you know I'm all about that chess.</q> -Albert Einstein</p>
+    <p class="text-center"><q>Let's talk about chess baby.</q> -Mary Shelley </p>
 
-        <div class="d-flex justify-content-center">
-            <table class=" text-center">
-                <tr>
-                    <th></th>
-                    <th>a</th>
-                    <th>b</th>
-                    <th>c</th>
-                    <th>d</th>
-                    <th>e</th>
-                    <th>f</th>
-                    <th>g</th>
-                    <th>h</th>
-                    <th></th>
-                </tr>
-
-                <tr>
-                    <th>8</th>
-                    <td></td>
-                    <td class="bg-secondary text-light"></td>
-                    <td></td>
-                    <td class="bg-secondary text-light"></td>
-                    <td></td>
-                    <td class="bg-secondary text-light"></td>
-                    <td></td>
-                    <td class="bg-secondary text-light"></td>
-                    <th>8</th>
-                </tr>
-
-                <tr>
-                    <th>7</th>
-                    <td class="bg-secondary text-light"></td>
-                    <td></td>
-                    <td class="bg-secondary text-light"></td>
-                    <td></td>
-                    <td class="bg-secondary text-light"></td>
-                    <td></td>
-                    <td class="bg-secondary text-light"></td>
-                    <td></td>
-                    <th>7</th>
-                </tr>
-
-                <tr>
-                    <th>6</th>
-                    <td></td>
-                    <td class="bg-secondary text-light"></td>
-                    <td></td>
-                    <td class="bg-secondary text-light"></td>
-                    <td></td>
-                    <td class="bg-secondary text-light"></td>
-                    <td></td>
-                    <td class="bg-secondary text-light"></td>
-                    <th>6</th>
-                </tr>
-
-                <tr>
-                    <th>5</th>
-                    <td class="bg-secondary text-light"></td>
-                    <td></td>
-                    <td class="bg-secondary text-light"></td>
-                    <td></td>
-                    <td class="bg-secondary text-light"></td>
-                    <td></td>
-                    <td class="bg-secondary text-light"></td>
-                    <td></td>
-                    <th>5</th>
-                </tr>
-
-                <tr>
-                    <th>4</th>
-                    <td></td>
-                    <td class="bg-secondary text-light"></td>
-                    <td></td>
-                    <td class="bg-secondary text-light"></td>
-                    <td></td>
-                    <td class="bg-secondary text-light"></td>
-                    <td></td>
-                    <td class="bg-secondary text-light"></td>
-                    <th>4</th>
-                </tr>
-
-                <tr>
-                    <th>3</th>
-                    <td class="bg-secondary text-light"></td>
-                    <td></td>
-                    <td class="bg-secondary text-light"></td>
-                    <td></td>
-                    <td class="bg-secondary text-light"></td>
-                    <td></td>
-                    <td class="bg-secondary text-light"></td>
-                    <td></td>
-                    <th>3</th>
-                </tr>
-
-                <tr>
-                    <th>2</th>
-                    <td></td>
-                    <td class="bg-secondary text-light"></td>
-                    <td></td>
-                    <td class="bg-secondary text-light"></td>
-                    <td></td>
-                    <td class="bg-secondary text-light"></td>
-                    <td></td>
-                    <td class="bg-secondary text-light"></td>
-                    <th>2</th>
-                </tr>
-
-                <tr>
-                    <th>1</th>
-                    <td class="bg-secondary text-light"></td>
-                    <td></td>
-                    <td class="bg-secondary text-light"></td>
-                    <td></td>
-                    <td class="bg-secondary text-light"></td>
-                    <td></td>
-                    <td class="bg-secondary text-light"></td>
-                    <td></td>
-                    <th>1</th>
-                </tr>
-
-                <tr>
-                    <th></th>
-                    <th>a</th>
-                    <th>b</th>
-                    <th>c</th>
-                    <th>d</th>
-                    <th>e</th>
-                    <th>f</th>
-                    <th>g</th>
-                    <th>h</th>
-                    <th></th>
-                </tr>
-            </table>
-        </div>
-
+    <div class="d-flex justify-content-center">
+        <canvas id="game-canvas"></canvas>
+        <script src="./script/index.js"></script>
     </div>
-
 </body>
-
-<script>
-
-    (function () {
-        let squares = document.querySelectorAll("td");
-
-        let j = 0;
-        i = 0;
-        for (i in squares) {
-            if (i > 0 && i % 8 === 0) j++;
-            msg = `${j},${i % 8}`;
-            squares[i].innerHTML = msg;
-            squares[i].dataset.matrix = msg;
-        };
-
-    })();
-
-</script>
 
 </html>
