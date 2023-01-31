@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <title>Xadrez</title>
+
+    <style>
+        td,
+        th {
+            height: 50px;
+            width: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+
+        <h1 class=" text-center mb-5">Xadrez</h1>
+
+        <div class="d-flex justify-content-center">
+            <table class=" text-center">
+                <tr>
+                    <th></th>
+                    <th>a</th>
+                    <th>b</th>
+                    <th>c</th>
+                    <th>d</th>
+                    <th>e</th>
+                    <th>f</th>
+                    <th>g</th>
+                    <th>h</th>
+                    <th></th>
+                </tr>
+
+                <tr>
+                    <th>8</th>
+                    <td></td>
+                    <td class="bg-secondary text-light"></td>
+                    <td></td>
+                    <td class="bg-secondary text-light"></td>
+                    <td></td>
+                    <td class="bg-secondary text-light"></td>
+                    <td></td>
+                    <td class="bg-secondary text-light"></td>
+                    <th>8</th>
+                </tr>
+
+                <tr>
+                    <th>7</th>
+                    <td class="bg-secondary text-light"></td>
+                    <td></td>
+                    <td class="bg-secondary text-light"></td>
+                    <td></td>
+                    <td class="bg-secondary text-light"></td>
+                    <td></td>
+                    <td class="bg-secondary text-light"></td>
+                    <td></td>
+                    <th>7</th>
+                </tr>
+
+                <tr>
+                    <th>6</th>
+                    <td></td>
+                    <td class="bg-secondary text-light"></td>
+                    <td></td>
+                    <td class="bg-secondary text-light"></td>
+                    <td></td>
+                    <td class="bg-secondary text-light"></td>
+                    <td></td>
+                    <td class="bg-secondary text-light"></td>
+                    <th>6</th>
+                </tr>
+
+                <tr>
+                    <th>5</th>
+                    <td class="bg-secondary text-light"></td>
+                    <td></td>
+                    <td class="bg-secondary text-light"></td>
+                    <td></td>
+                    <td class="bg-secondary text-light"></td>
+                    <td></td>
+                    <td class="bg-secondary text-light"></td>
+                    <td></td>
+                    <th>5</th>
+                </tr>
+
+                <tr>
+                    <th>4</th>
+                    <td></td>
+                    <td class="bg-secondary text-light"></td>
+                    <td></td>
+                    <td class="bg-secondary text-light"></td>
+                    <td></td>
+                    <td class="bg-secondary text-light"></td>
+                    <td></td>
+                    <td class="bg-secondary text-light"></td>
+                    <th>4</th>
+                </tr>
+
+                <tr>
+                    <th>3</th>
+                    <td class="bg-secondary text-light"></td>
+                    <td></td>
+                    <td class="bg-secondary text-light"></td>
+                    <td></td>
+                    <td class="bg-secondary text-light"></td>
+                    <td></td>
+                    <td class="bg-secondary text-light"></td>
+                    <td></td>
+                    <th>3</th>
+                </tr>
+
+                <tr>
+                    <th>2</th>
+                    <td></td>
+                    <td class="bg-secondary text-light"></td>
+                    <td></td>
+                    <td class="bg-secondary text-light"></td>
+                    <td></td>
+                    <td class="bg-secondary text-light"></td>
+                    <td></td>
+                    <td class="bg-secondary text-light"></td>
+                    <th>2</th>
+                </tr>
+
+                <tr>
+                    <th>1</th>
+                    <td class="bg-secondary text-light"></td>
+                    <td></td>
+                    <td class="bg-secondary text-light"></td>
+                    <td></td>
+                    <td class="bg-secondary text-light"></td>
+                    <td></td>
+                    <td class="bg-secondary text-light"></td>
+                    <td></td>
+                    <th>1</th>
+                </tr>
+
+                <tr>
+                    <th></th>
+                    <th>a</th>
+                    <th>b</th>
+                    <th>c</th>
+                    <th>d</th>
+                    <th>e</th>
+                    <th>f</th>
+                    <th>g</th>
+                    <th>h</th>
+                    <th></th>
+                </tr>
+            </table>
+        </div>
+
+    </div>
+
+</body>
+
+<script>
+
+    (function () {
+        let squares = document.querySelectorAll("td");
+
+        let j = 0;
+        i = 0;
+        for (i in squares) {
+            if (i > 0 && i % 8 === 0) j++;
+            msg = `${j},${i % 8}`;
+            squares[i].innerHTML = msg;
+            squares[i].dataset.matrix = msg;
+        };
+
+    })();
+
+</script>
+
+</html>
